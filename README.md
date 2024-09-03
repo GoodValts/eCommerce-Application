@@ -4,8 +4,7 @@
 * [Description](#description)
 * [Purpose](#purpose)
 * [Technologies](#technologies)
-* [Install](#install)
-* [Deploy](#deploy)
+* [Install](#install) ([Deploy](#deploy))
 * [Scripts](#available-scripts)
 * [Team](#team)
 
@@ -61,7 +60,7 @@ To start the application, please make sure you have [Git](https://git-scm.com) a
 1. Install dependencies: `npm install`
 1. Start the development server: `npm start`
 
-#### [Deploy](https://motodream-shop.netlify.app).
+#### [Deploy link](https://motodream-shop.netlify.app).
 
 ## Available Scripts
 In the project directory, you can run scripts:
