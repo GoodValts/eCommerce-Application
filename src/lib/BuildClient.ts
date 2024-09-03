@@ -4,7 +4,6 @@ import {
   type HttpMiddlewareOptions,
 } from '@commercetools/sdk-client-v2';
 
-// Configure authMiddlewareOptions
 const authMiddlewareOptions: AuthMiddlewareOptions = {
   host: 'https://auth.europe-west1.gcp.commercetools.com',
   projectKey: 'ddt-e-commerce-rss-app',
@@ -18,13 +17,11 @@ const authMiddlewareOptions: AuthMiddlewareOptions = {
   fetch,
 };
 
-// Configure httpMiddlewareOptions
 export const httpMiddlewareOptions: HttpMiddlewareOptions = {
   host: 'https://api.europe-west1.gcp.commercetools.com',
   fetch,
 };
 
-// Export the ClientBuilder
 export const ctpClient = new ClientBuilder()
   .withClientCredentialsFlow(authMiddlewareOptions)
   .withHttpMiddleware(httpMiddlewareOptions)

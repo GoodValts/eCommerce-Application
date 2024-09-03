@@ -10,13 +10,8 @@ import categoryLogoObj from '../../src/model/data/images-src';
 import { getCountryName } from '../../src/model/data/countries';
 import filters from '../../src/view/pages/catalog/filters'
 
-// loginPage, header, footer
-
-
 const dom = new JSDOM();
 global.document = dom.window.document;
-
-// header
 
 describe('login page tests', () => {
   describe('result message tests', () => {
@@ -142,8 +137,6 @@ describe('login page tests', () => {
   });
 });
 
-// header
-
 describe('header tests', () => {
   describe('header container', () => {
     test('header contains logo container', () => {
@@ -173,35 +166,6 @@ describe('header tests', () => {
     test('header contains nav', () => {
       expect(nav).toBeDefined();
     });
-
-    // test('nav container contains links', () => {
-    //   expect(nav?.querySelectorAll('a').length).toBeGreaterThan(0);
-    // });
-
-    // function checkLink(id: string, routing: string): boolean {
-    //   const link = nav?.querySelector(`#${id}`) as HTMLLinkElement;
-    //   if (link.href.includes(routing)) {
-    //     return true;
-    //   }
-    //   return false;
-    // }
-
-    // const linksArr = [
-    //   ['main-page', '/'],
-    //   ['products', 'catalog'],
-    //   ['basket', '/basket'],
-    //   ['about', '/about'],
-    //   ['sigin', '/registration'],
-    //   ['login', '/login'],
-    //   ['profile', '/profile'],
-    //   ['logout', '/login'],
-    // ]
-
-    // linksArr.forEach(el => {
-    //   test(`nav link ${el[0]} exists with correct route`, () => {
-    //     expect(checkLink(el[0], el[1])).toBeTruthy();
-    //   });
-    // })
 
     Object.entries(navObj).forEach(([key, value]) => {
       test(`nav obj ${key} exists`, () => {

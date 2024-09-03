@@ -119,14 +119,12 @@ const fillVariants = (
   for (let i = 0; i < colors.length; i += 1) {
     const variant = document.createElement('a');
     variant.className = 'variants__links';
-    // css
     variant.style.borderColor = 'black';
     variant.style.backgroundColor = colors[i];
     variant.style.borderColor = colors[i];
     variant.title = variants[i].sku;
     if (colors[i] === currentClolor)
       variant.classList.add('variants__main', 'variants__selected');
-    // add correct link
     variant.onclick = () => {
       window.routeLocation = `/product?sku=${variants[i].sku}`;
     };

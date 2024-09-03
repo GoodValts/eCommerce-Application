@@ -24,7 +24,6 @@
   @include _mobile {
     grid-column: 1 / 2;
     font-size: 16px;
-    // margin: $marginMobileDiv2;
   }
 }
 
@@ -39,12 +38,11 @@
 .image-block__picture {
   display: block;
   max-width: 50vw;
-  width: 400px; // for cross-check only
+  width: 400px;
   margin: 0 auto;
   border-radius: $marginDesctopDiv2;
   @include _mobile {
-    // max-width: calc(100% - $marginMobile);
-    max-width: calc(70vw); // for cross-check only
+    max-width: calc(70vw);
     width: 400px;
     margin: 0 auto;
   }

@@ -5,8 +5,6 @@ filters.id = 'filters';
 export const filtersBlock = document.createElement('div');
 filtersBlock.classList.add('filters__filter-block');
 
-// get arrs from API
-
 const companyArr = ['Honda', 'Yamaha', 'Suzuki', 'Kawasaki'];
 
 const typesArr = ['Standard', 'Sport', 'Cruiser', 'Touring'];
@@ -17,8 +15,6 @@ const drivetrainsArr = ['Chain', 'Belt', 'Shaft'];
 
 const brakesArr = ['Disc', 'Drum', 'Disc and drum'];
 
-// finish with API
-
 function createFilter(filterName: string, id: string): HTMLElement {
   const filter = document.createElement('div');
   filter.classList.add('filters__filter');
@@ -26,7 +22,7 @@ function createFilter(filterName: string, id: string): HTMLElement {
 
   const header = document.createElement('h3');
   header.classList.add('filter__header');
-  header.textContent = filterName.concat(' ▵'); // ▿
+  header.textContent = filterName.concat(' ▵');
   filter.append(header);
 
   return filter;
@@ -58,18 +54,12 @@ function createCheckboxFilter(
     container.append(label);
   });
 
-  // console.log('filter=', filter.firstElementChild);
-  // console.log('filterContainer=', container);
-
   filter.append(container);
 
   return filter;
 }
 
-function createRangeFilter(
-  filterName: string,
-  filterId: string /* , maxValue: number, minValue: number */,
-): HTMLElement {
+function createRangeFilter(filterName: string, filterId: string): HTMLElement {
   const filter = createFilter(filterName, filterId);
 
   const container = document.createElement('div');
@@ -79,16 +69,11 @@ function createRangeFilter(
   minValueInput.classList.add('filter__range-input');
   minValueInput.type = 'number';
   minValueInput.name = `${filterId}From`;
-  // minValueInput.min = minValue.toString();
-  // minValueInput.max = maxValue.toString();
 
   const maxValueInput = document.createElement('input');
   maxValueInput.classList.add('filter__range-input');
   maxValueInput.type = 'number';
   maxValueInput.name = `${filterId}To`;
-  // maxValueInput.min = minValue.toString();
-  // maxValueInput.max = maxValue.toString();
-
   const minLabel = document.createElement('label');
   minLabel.classList.add('filter__label');
   minLabel.textContent = 'from';
@@ -108,7 +93,6 @@ function createRangeFilter(
 
 const price = createRangeFilter('Price', 'price');
 const year = createRangeFilter('Year', 'attr-year');
-// console.log(year);
 
 const displacement = createRangeFilter('Displacement (cc)', 'attr-dsp');
 const power = createRangeFilter('Power (hp)', 'attr-power');

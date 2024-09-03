@@ -26,7 +26,6 @@ function getSpecifyError(type: string, data: string): string {
       break;
     }
     default: {
-      // statements;
       break;
     }
   }

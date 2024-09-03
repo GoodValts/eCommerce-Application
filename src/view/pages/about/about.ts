@@ -123,18 +123,6 @@ function createMemberBlock(member: MemberObj) {
     contribution,
   );
 
-  // const strArr = [
-  //   `${member.name} is a ${member.age.toString()} y.o. ${member.skill} from `, // add link go maps
-  // ];
-
-  // strArr.forEach((el) => {
-  //   const paragraph = document.createElement('p');
-  //   paragraph.classList.add('member__paragraph');
-  //   paragraph.textContent = el;
-
-  //   memberBlock.append(paragraph);
-  // });
-
   teamContainer.append(memberBlock);
 }
 

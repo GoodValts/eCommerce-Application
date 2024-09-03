@@ -18,7 +18,6 @@ const categoryLogoObj: Record<string, string> = {
   Cruiser: cruiserLogo,
 };
 
-// Preloading images
 Object.values(categoryLogoObj).forEach((image: string) => {
   const img = new Image();
   img.src = image;

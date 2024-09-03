@@ -1,14 +1,6 @@
 const checkAgeParams = () => {
   const currentDate = new Date().getTime();
 
-  // const msInSec = 1000;
-  // const secInMin = 60;
-  // const minInHour = 60;
-  // const hoursInDay = 24;
-  // const monthInYear = 12; // correct?
-  // const daysInYear = 365; // correct?
-  // const smth = 3; //
-
   const msPerDay = 86400000;
   const daysPerYear = 365;
   const leapYearAmount = 4;

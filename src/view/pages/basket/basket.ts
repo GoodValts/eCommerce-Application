@@ -4,10 +4,8 @@ import emptyImg from '../../../assets/images/empty-cart.png';
 const basketPage = document.createElement('div');
 basketPage.classList.add('basket-page');
 
-// empty cart
-
 const emptyContainer = document.createElement('div');
-emptyContainer.classList.add('basket__empty'); // , 'hidden');
+emptyContainer.classList.add('basket__empty');
 emptyContainer.hidden = true;
 
 const emptyHeader = document.createElement('h2');
@@ -43,10 +41,8 @@ emptyButton.textContent = 'Choose your bike now!';
 
 emptyContainer.append(emptyButton);
 
-// not empty cart
-
 const basketContainer = document.createElement('div');
-basketContainer.classList.add('basket__basket-container'); // , 'hidden');
+basketContainer.classList.add('basket__basket-container');
 basketContainer.hidden = true;
 
 const basketHeader = document.createElement('h2');
@@ -56,7 +52,6 @@ basketHeader.textContent = 'Products in cart:';
 const itemsBlock = document.createElement('div');
 itemsBlock.classList.add('basket-container__items');
 
-// promo block
 export const promoBlock = document.createElement('div');
 promoBlock.classList.add('basket-container__promo');
 
@@ -91,17 +86,17 @@ deleteAllButton.classList.add('delete-block__delete-button');
 deleteAllButton.textContent = 'Clear cart';
 
 const confirmButton = document.createElement('button');
-confirmButton.classList.add('delete-block__confirm-button'); // , 'hidden');
+confirmButton.classList.add('delete-block__confirm-button');
 confirmButton.textContent = 'Confirm';
 confirmButton.style.display = 'none';
 
 const returnButton = document.createElement('button');
-returnButton.classList.add('delete-block__return-button'); // , 'hidden');
+returnButton.classList.add('delete-block__return-button');
 returnButton.textContent = 'Return';
 returnButton.style.display = 'none';
 
 const confirmMessage = document.createElement('p');
-confirmMessage.classList.add('delete-block__confirm-message'); // , 'hidden');
+confirmMessage.classList.add('delete-block__confirm-message');
 confirmMessage.textContent =
   'Are you sure you want to delete all items from your cart? This action cannot be undone';
 confirmMessage.hidden = true;

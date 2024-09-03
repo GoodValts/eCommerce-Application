@@ -378,11 +378,6 @@
     margin: $marginTabletDiv4;
     margin-bottom: 0;
   }
-  // @include _mobile {
-  //   font-size: 12px;
-  //   margin: $marginMobileDiv2;
-  //   margin-bottom: 0;
-  // }
 }
 
 .card__price-block {
@@ -396,10 +391,6 @@
     margin: $marginTabletDiv2 $marginTabletDiv4;
     margin-bottom: 0;
   }
-  // @include _mobile {
-  //   margin: $marginMobileDiv2;
-  //   margin-bottom: 0;
-  // }
 }
 
 .price-block__price {
@@ -438,10 +429,6 @@
   @include _tablet {
     margin: $marginTablet auto;
   }
-  // @include _mobile {
-  //   margin: $marginMobile auto;
-  //   @include _button(100px, 20px, 14px);
-  // }
   &:hover {
     background-color: limegreen;
   };

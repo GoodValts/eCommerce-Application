@@ -42,7 +42,6 @@ async function updateCustomer() {
         console.error('server error or User is undefined');
       }
     }
-    // else window.routeLocation = '/login';
   }, 50);
 }
 

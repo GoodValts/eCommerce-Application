@@ -34,7 +34,7 @@ const Ivan = {
 const Ekaterina = {
   name: 'Katsiaryna',
   surname: 'Talkachova',
-  age: getAge(new Date(1986, 2, 21)), // add Date of Birth
+  age: getAge(new Date(1986, 2, 21)),
   photo: kateImg,
   city: 'Brest',
   role: 'Web Developer',

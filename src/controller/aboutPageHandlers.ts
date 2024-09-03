@@ -1,8 +1,9 @@
 function aboutPageLoaded() {
   const location = window.location.pathname;
   if (location === '/about') {
-    // do something
+    return undefined;
   }
+  return undefined;
 }
 
 window.addEventListener('PageContentLoaded', aboutPageLoaded);

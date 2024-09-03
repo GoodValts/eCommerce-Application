@@ -15,7 +15,6 @@ export const createUserAPIRoot = (
   mail?: string,
   pass?: string,
 ): ByProjectKeyRequestBuilder => {
-  // create apiRoot with pass flow on login for this user and add it to cache
   if (mail && pass) {
     const options = passOptions(mail, pass);
     const client = new ClientBuilder()
@@ -34,23 +33,18 @@ export const createUserAPIRoot = (
   if (isCustomerLogged) {
     const { email } = customer;
     apiRoots.delete('anon');
-    // return apiRoot with token from cache for logged customer
     if (apiRoots.has(`${email}withToken`)) {
       const apiRootWithUserToken = apiRoots.get(
         `${email}withToken`,
       ) as ByProjectKeyRequestBuilder;
-      // console.log('apiROOT with token from cache');
       return apiRootWithUserToken;
     }
-    // return apiRoot with pass from cache for logged customer and delete it
     if (apiRoots.has(email)) {
       const apiRootPass = apiRoots.get(email) as ByProjectKeyRequestBuilder;
       apiRoots.delete(email);
 
-      // console.log('apiROOT with pass');
       return apiRootPass;
     }
-    // return new apiRoot with token and put it to cache,
     const json = localStorage.getItem('customerToken') as string;
     const { token } = JSON.parse(json);
     const tokenOptions: ExistingTokenMiddlewareOptions = {
@@ -71,15 +65,11 @@ export const createUserAPIRoot = (
     const apiRootWithUserToken = apiRoots.get(
       `${email}withToken`,
     ) as ByProjectKeyRequestBuilder;
-    // console.log('apiROOT with token created ');
     return apiRootWithUserToken;
   }
-  // return anonymous builder from cache
   if (apiRoots.has('anon')) {
-    // ('apiROOT anonymous');
     return apiRoots.get('anon') as ByProjectKeyRequestBuilder;
   }
-  // create anonymous builder
   const apiRootUserAnonym = createApiBuilderFromCtpClient(
     anonCartClient,
   ).withProjectKey({

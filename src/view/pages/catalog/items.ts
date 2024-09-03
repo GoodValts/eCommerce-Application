@@ -8,8 +8,6 @@ import cardsBlock from './cards';
 const items = document.createElement('div');
 items.classList.add('catalog__items');
 
-// routing block
-
 const routingBlock = document.createElement('div');
 routingBlock.classList.add('items__routing');
 
@@ -27,8 +25,6 @@ subCategoryName.classList.add('routing__text');
 subCategoryName.textContent = '';
 
 routingBlock.append(catalogName, categoryName, subCategoryName);
-
-// searching block
 
 const searchingBlock = document.createElement('div');
 searchingBlock.classList.add('items__search');
@@ -79,8 +75,6 @@ searchFilterBlock.append(
 
 export const paginationBlock = document.createElement('select');
 paginationBlock.classList.add('search__pagination-block');
-// searchFilterBlock.name = 'sorting';
-// searchFilterBlock.setAttribute('form', 'filters');
 
 const pagination5 = document.createElement('option');
 pagination5.classList.add('search__filter');
@@ -154,8 +148,6 @@ pageNumberBlock.append(
   nextButton,
   deepNextButton,
 );
-
-// compiling
 
 items.append(
   routingBlock,

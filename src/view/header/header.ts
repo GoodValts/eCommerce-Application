@@ -18,8 +18,6 @@ const headerContainer = document.createElement('div');
 headerContainer.classList.add('header__container');
 header.append(headerContainer);
 
-// create HeaderLogo
-
 const headerLogo = document.createElement('div');
 headerLogo.classList.add('header__logo');
 
@@ -32,8 +30,6 @@ const logoText = document.createElement('h1');
 logoText.classList.add('logo__text');
 
 headerLogo.append(logoImg, logoText);
-
-// create Nav
 
 const nav = document.createElement('nav');
 nav.classList.add('header__nav');
@@ -105,7 +101,6 @@ Object.entries(navObj).forEach(([key, value]) => {
     const numberOfItems = document.createElement('p');
     numberOfItems.classList.add('nav__number-of-items');
     numberOfItems.textContent = '1';
-    // you can export or find by id
     numberOfItems.id = 'basket-header-number';
     numberOfItems.classList.add('hidden');
     el.append(numberOfItems);
@@ -124,8 +119,6 @@ const changeRegStatus = () => {
     element?.classList.toggle('hidden');
   });
 };
-
-// create burger-icon
 
 const burger = document.createElement('div');
 burger.classList.add('header__burger');

@@ -16,8 +16,6 @@ async function pageLoaded(e: Event) {
 
 window.addEventListener('PageContentLoaded', pageLoaded);
 
-// add / remove product from basket
-
 const toggleBasket = async (action: 'add' | 'remove') => {
   const activeCart = await getActiveCart();
   const { id, version, lineItems } = activeCart.body;
