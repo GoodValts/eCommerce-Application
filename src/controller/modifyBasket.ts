@@ -78,7 +78,7 @@ const clearCart = async () => {
     basketContainer.hidden = true;
     emptyContainer.hidden = false;
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
 confirmButton.addEventListener('click', clearCart);

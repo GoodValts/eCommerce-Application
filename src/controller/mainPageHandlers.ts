@@ -3,10 +3,9 @@ import { fillPromoSection } from '../view/pages/main/main';
 
 async function mainPageLoaded() {
   const location = window.location.pathname;
-  console.log(location);
   if (location === '/') {
     const response = await getPromoCodes();
-    fillPromoSection(response.body.results);
+    if (response) fillPromoSection(response.body.results);
   }
 }
 

@@ -1,0 +1,39 @@
+@import '../general.scss';
+
+.error-message__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  cursor: none;
+}
+
+.error-message__text {
+  max-width: 400px;
+  max-height: 400px;
+  background-color: rgba($color: #DC143C, $alpha: .9);
+  text-align: center;
+  padding: $marginDesctop;
+  border-radius: calc($marginDesctop / 2);
+  margin: auto $marginDesctop calc(80px + $marginDesctop) auto;
+  @include _font(20px);
+  @include _tablet {
+    font-size: 16px;
+    padding: $marginTablet;
+    border-radius: calc($marginTablet / 2);
+    margin: auto $marginTablet calc(60px + $marginTablet) auto;
+  }
+  @include _mobile {
+    max-width: 80vw;
+    font-size: 12px;
+    padding: $marginMobile;
+    border-radius: calc($marginMobile / 2);
+    margin: auto;
+    margin-bottom: calc(50px + $marginMobile);
+  }
+}

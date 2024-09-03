@@ -50,7 +50,7 @@ export const changeCustomerPassword = (customer: CustomerChangePassword) => {
       .then((arg) => arg)
       .catch((err) => err);
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return false;
   }
 };
@@ -74,7 +74,7 @@ export const updateCustomerData = (
       .then((arg) => arg)
       .catch((err) => err);
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return false;
   }
 };
@@ -227,7 +227,7 @@ export const getCategoryById = (id: string) => {
       .then((obj) => obj)
       .catch((err) => err);
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return false;
   }
 };
@@ -242,7 +242,7 @@ export const getCategoryByKey = (key: string) => {
       .then((obj) => obj)
       .catch((err) => err);
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return false;
   }
 };

@@ -1,5 +1,6 @@
 import { activeIcon, icon } from '../view/pages/catalog/catalog';
 import filters, { filtersBlock } from '../view/pages/catalog/filters';
+import { showError } from './application';
 import { fillMenu } from './fillCatalogPage';
 import { filterSubmit } from './filterSubmitHandler';
 
@@ -22,15 +23,7 @@ export const showFilters = (filterBlock: HTMLElement): void => {
   filterBlock.classList.toggle('visable');
 };
 
-// const changeFilterIconStatus = (
-//   activeFilter: HTMLElement,
-//   unactiveFilter: HTMLElement,
-// ): void => {
-//   activeFilter.classList.toggle('hidden');
-//   unactiveFilter.classList.toggle('hidden');
-// };
-
-function addFilterBlcokListeners() {
+function addFilterBlockListeners() {
   filtersBlock.childNodes.forEach((el) => {
     const block = el as HTMLElement;
     const header: HTMLElement = block.querySelector('.filter__header')!;
@@ -47,9 +40,14 @@ async function pageLoaded(e: Event) {
   const location = window.location.pathname;
   const options = (e as CustomEvent).detail;
   if (location === '/catalog') {
-    await fillMenu(options.category);
-    await filterSubmit(options.key);
-    await addFilterBlcokListeners();
+    try {
+      await fillMenu(options.category);
+      await filterSubmit(options.key);
+    } catch (err) {
+      showError((err as Error).message);
+    } finally {
+      addFilterBlockListeners();
+    }
   }
 }
 

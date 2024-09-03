@@ -10,7 +10,7 @@ const searchHandler = async () => {
     const cardsData = await getProductsBySearchField(searchValue.toLowerCase());
     placeCards(cardsData);
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 

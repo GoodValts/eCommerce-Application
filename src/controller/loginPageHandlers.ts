@@ -1,6 +1,6 @@
 import loginForm from '../view/pages/login/login';
 import resultMessage from '../view/components/resultMessage';
-import { setLoacalCustomer } from '../model/login';
+import { setLocalCustomer } from '../model/login';
 import {
   getActiveCart,
   getCustomerToken,
@@ -29,7 +29,7 @@ async function submitHandler(e: Event) {
 
   resultMessage.classList.remove('hidden');
   if (response.statusCode === 200) {
-    setLoacalCustomer(response.body.customer);
+    setLocalCustomer(response.body.customer);
     resultMessage.firstChild!.textContent = `Welcome to MotoDream, ${response.body.customer.firstName}!`;
     await getCustomerToken();
     setTimeout(() => {

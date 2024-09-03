@@ -1,6 +1,6 @@
 import { createCustomer } from '../model/api/apiRoot';
 import countries from '../model/data/countries';
-import { setLoacalCustomer } from '../model/login';
+import { setLocalCustomer } from '../model/login';
 import { Address, CustomerDraft } from '../types/API-interfaces';
 import registrationForm from '../view/pages/registration/registration';
 import resultMessage from '../view/components/resultMessage';
@@ -82,7 +82,7 @@ export const submitHandler = async (e: Event) => {
         newCustomer.password,
       );
       if (logResponse.statusCode === 200) {
-        setLoacalCustomer(logResponse.body.customer);
+        setLocalCustomer(logResponse.body.customer);
         setTimeout(() => {
           resultMessage.firstChild!.textContent = `Welcome to the club, ${logResponse.body.customer.firstName}`;
           localStorage.removeItem('cartAnonToken');
