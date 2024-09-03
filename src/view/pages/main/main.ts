@@ -55,16 +55,16 @@ export function fillPromoSection(codes: DiscountCode[]) {
   }
   promoSection.classList.remove('hidden');
   codes.forEach((item) => {
-    const promiItem = document.createElement('div');
-    promiItem.classList.add('main-page__promo');
+    const promoItem = document.createElement('div');
+    promoItem.classList.add('main-page__promo');
     const promoCode = document.createElement('p');
     promoCode.classList.add('promo__name');
     promoCode.textContent = item.code;
     const promoDesc = document.createElement('p');
     promoDesc.classList.add('promo__desc');
     promoDesc.textContent = item.description!.en;
-    promiItem.append(promoCode, promoDesc);
-    promoContainer.append(promiItem);
+    promoItem.append(promoCode, promoDesc);
+    promoContainer.append(promoItem);
   });
   return true;
 }
@@ -78,7 +78,7 @@ categorySection.classList.add('main-page__brands');
   const categoryArr = await setCategories(catList);
 
   if (categoryArr) {
-    categoryArr!.forEach((el) => {
+    categoryArr.forEach((el) => {
       const logo = document.createElement('img');
       logo.classList.add('brands__logo');
       logo.src = categoryLogoObj[el.name.en];

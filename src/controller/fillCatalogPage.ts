@@ -30,27 +30,33 @@ const setCategories = async (
   subCategory?: HTMLElement,
 ): Promise<Category[] | undefined> => {
   const categoryArr: Category[] = [];
-  if (category && category.textContent) {
-    if (!(subCategory && subCategory.textContent)) {
-      await Promise.all(
-        categoriesList
-          .filter((el) => el.parent)
-          .map(async (el) => {
-            const parentRequest = categoriesList.find(
-              (cat) => cat.id === el.parent!.id,
-            )!;
-            const categoryText = category.textContent?.replace('/', '').trim();
-            if (parentRequest.name.en === categoryText) {
-              categoryArr.push(el);
-            }
-            return categoryArr;
-          }),
-      );
+  try {
+    if (category && category.textContent) {
+      if (!(subCategory && subCategory.textContent)) {
+        await Promise.all(
+          categoriesList
+            .filter((el) => el.parent)
+            .map(async (el) => {
+              const parentRequest = categoriesList.find(
+                (cat) => cat.id === el.parent!.id,
+              )!;
+              const categoryText = category.textContent
+                ?.replace('/', '')
+                .trim();
+              if (parentRequest.name.en === categoryText) {
+                categoryArr.push(el);
+              }
+              return categoryArr;
+            }),
+        );
+      }
+    } else {
+      categoriesList
+        .filter((el) => el.ancestors.length === 0)
+        .forEach((el) => categoryArr.push(el));
     }
-  } else {
-    categoriesList
-      .filter((el) => el.ancestors.length === 0)
-      .forEach((el) => categoryArr.push(el));
+  } catch {
+    return undefined;
   }
 
   return categoryArr;
