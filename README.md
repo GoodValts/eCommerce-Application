@@ -4,7 +4,7 @@
 * [Description](#description)
 * [Purpose](#purpose)
 * [Technologies](#technologies)
-* [Install](#install) ([Deploy](#deploy))
+* [Install](#install) (deploy)
 * [Scripts](#available-scripts)
 * [Team](#team)
 
