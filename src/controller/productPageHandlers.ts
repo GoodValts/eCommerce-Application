@@ -47,7 +47,7 @@ const addBasketButtonHandler = async () => {
   try {
     await toggleBasket(action);
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
 

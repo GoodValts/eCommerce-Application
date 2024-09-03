@@ -3,7 +3,7 @@ import {
   CustomerDraft,
   CustomerUpdateAction,
 } from '@commercetools/platform-sdk';
-import { getLoacalCustomer, setLoacalCustomer } from './login';
+import { getLocalCustomer, setLocalCustomer } from './login';
 import { changeCustomerPassword, updateCustomerData } from './api/apiRoot';
 import resultMessage from '../view/components/resultMessage';
 import { AddressVariant, PromiseResponse } from '../types/type';
@@ -11,7 +11,7 @@ import { AddressVariant, PromiseResponse } from '../types/type';
 function showResultMessage(response: PromiseResponse, msg: string) {
   resultMessage.classList.remove('hidden');
   if (response.statusCode === 200) {
-    setLoacalCustomer(response.body);
+    setLocalCustomer(response.body);
     window.dispatchEvent(new Event('PageContentLoaded'));
     resultMessage.firstChild!.textContent = msg;
   } else {
@@ -25,7 +25,7 @@ function showResultMessage(response: PromiseResponse, msg: string) {
 }
 
 export async function deleteAddress(id: string) {
-  const customer = getLoacalCustomer();
+  const customer = getLocalCustomer();
   const data: CustomerUpdateAction[] = [];
   data.push({
     action: 'removeAddress',
@@ -36,7 +36,7 @@ export async function deleteAddress(id: string) {
 }
 
 export async function submitUserData(user: CustomerDraft) {
-  const customer = getLoacalCustomer();
+  const customer = getLocalCustomer();
   const data: CustomerUpdateAction[] = [];
   data.push({
     action: 'setFirstName',
@@ -63,7 +63,7 @@ export async function submitAddressData(
   address: AddressDraft,
   type: AddressVariant,
 ) {
-  const customer = getLoacalCustomer();
+  const customer = getLocalCustomer();
   const lsAddress = customer.addresses.find(
     (el: AddressDraft) => el.id === address.id,
   );
@@ -107,7 +107,7 @@ export async function submitAddressData(
 
     const response = await updateCustomerData(customer, data);
     if (response.statusCode === 200) {
-      setLoacalCustomer(response.body);
+      setLocalCustomer(response.body);
       response.body.addresses.forEach((adr: AddressDraft) => {
         try {
           const emerged: boolean =
@@ -128,7 +128,7 @@ export async function changePassword(
   currentPassword: string,
   newPassword: string,
 ) {
-  const customer = getLoacalCustomer();
+  const customer = getLocalCustomer();
   const response = await changeCustomerPassword({
     id: customer.id,
     version: customer.version,

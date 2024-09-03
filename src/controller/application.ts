@@ -1,6 +1,7 @@
 import { getCustomerById } from '../model/api/apiRoot';
-import { getLoacalCustomer, setLoacalCustomer } from '../model/login';
+import { getLocalCustomer, setLocalCustomer } from '../model/login';
 import { PromiseResponse } from '../types/type';
+import errorMessage from '../view/components/errorMessage';
 import resultMessage from '../view/components/resultMessage';
 
 export async function showResultMessage(
@@ -20,16 +21,25 @@ export async function showResultMessage(
   return response;
 }
 
+export async function showError(error: string) {
+  errorMessage.classList.remove('hidden');
+  errorMessage.firstChild!.textContent = error;
+  setTimeout(() => {
+    errorMessage.firstChild!.textContent = '';
+    errorMessage.classList.add('hidden');
+  }, 3000);
+}
+
 async function updateCustomer() {
   setTimeout(async () => {
-    let customer = getLoacalCustomer();
+    let customer = getLocalCustomer();
     if ('id' in customer) {
       const response = await getCustomerById(customer.id);
       if (response.statusCode === 200) {
         customer = response.body;
-        setLoacalCustomer(customer);
+        setLocalCustomer(customer);
       } else {
-        console.log('server error or User is undefined');
+        console.error('server error or User is undefined');
       }
     }
     // else window.routeLocation = '/login';

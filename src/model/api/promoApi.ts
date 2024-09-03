@@ -1,8 +1,14 @@
+import { showError } from '../../controller/application';
 import { createUserAPIRoot } from './createApiRootUser';
 
 export const getPromoCodes = async () => {
-  const response = await createUserAPIRoot().discountCodes().get().execute();
-  return response;
+  try {
+    const response = await createUserAPIRoot().discountCodes().get().execute();
+    return response;
+  } catch (err) {
+    showError((err as Error).message);
+    return undefined;
+  }
 };
 
 export const setPromoToCart = async (

@@ -1,4 +1,4 @@
-import { getLoacalCustomer } from '../model/login';
+import { getLocalCustomer } from '../model/login';
 import { URLOptions } from '../types/type';
 
 type RedirectMapElement = {
@@ -38,7 +38,7 @@ export function getSearch(href: Location): URLOptions {
 
 export function checkRedirection(location: string): boolean {
   let result = false;
-  const customer = getLoacalCustomer();
+  const customer = getLocalCustomer();
   const loginCondition = 'id' in customer;
   redirectionMap.forEach((element) => {
     if (

@@ -1,5 +1,5 @@
 import { AddressDraft, CustomerDraft } from '@commercetools/platform-sdk';
-import { getLoacalCustomer } from '../model/login';
+import { getLocalCustomer } from '../model/login';
 import * as HTML from '../view/pages/profile/profile';
 import {
   changePassword,
@@ -65,7 +65,7 @@ const submitAddress = async (e: Event) => {
 };
 
 function getAddressType(id: string): number {
-  const customer = getLoacalCustomer();
+  const customer = getLocalCustomer();
   let type = 0;
   if (customer.shippingAddressIds.findIndex((el: string) => el === id) >= 0)
     type = 2;
@@ -86,7 +86,7 @@ function fillForms() {
     form.remove();
   });
 
-  const customer = getLoacalCustomer();
+  const customer = getLocalCustomer();
 
   const userDataForm = HTML.createUserDataForm();
   const user = userDataForm.elements as FormElements;
@@ -138,7 +138,7 @@ function pageLoaded() {
   const location = window.location.pathname;
   if (location === '/profile') {
     setTimeout(async () => {
-      const customer = getLoacalCustomer();
+      const customer = getLocalCustomer();
       if ('id' in customer) {
         hideData();
         fillForms();

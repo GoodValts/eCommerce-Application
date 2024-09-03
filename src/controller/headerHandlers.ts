@@ -1,4 +1,4 @@
-import { getLoacalCustomer, setLoacalCustomer } from '../model/login';
+import { getLocalCustomer, setLocalCustomer } from '../model/login';
 import { NavObjType } from '../types/type';
 import { logoImg, navObj } from '../view/header/header';
 import { updateHeaderCart } from './headerBasketHandlers';
@@ -22,11 +22,11 @@ function switchElements(_logined: boolean) {
 function navChanger(_menu: NavObjType) {
   if (_menu) menu = _menu;
   if (Object.keys(menu).length !== 0) {
-    const customer = getLoacalCustomer();
+    const customer = getLocalCustomer();
     switchElements('id' in customer);
     menu.logout.obj?.addEventListener('click', (e: Event) => {
       e.preventDefault();
-      setLoacalCustomer({});
+      setLocalCustomer({});
       switchElements(false);
       localStorage.removeItem('customerToken');
       updateHeaderCart();

@@ -205,7 +205,7 @@ export const filterSubmit = async (e: Event) => {
     updatePaginator(resp.body);
     placeCards(cards);
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
 
