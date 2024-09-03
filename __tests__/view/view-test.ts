@@ -53,19 +53,6 @@ describe('Registration page tests', () => {
   })
 })
 
-// describe('Main page tests', () => {
-//   const dom = new JSDOM(`<html></head><body></body></html>`)
-//   const container = dom.window.document.body
-//   container.innerHTML = mainPage.outerHTML;
-//   test('Link is on the page', () => {
-//     expect(getByRole(container, 'link')).toBeInTheDocument();
-//   })
-
-//   test('Contains only one h1', () => {
-//     expect(getAllByRole(container, 'heading').length).toBe(1)
-//   })
-// })
-
 describe('404 page tests', () => {
   const dom = new JSDOM(`<html></head><body></body></html>`)
   const container = dom.window.document.body

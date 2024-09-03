@@ -1,8 +1,6 @@
-// heading
 const name = document.createElement('h2');
 name.className = 'product__name';
 
-// price
 const priceCont = document.createElement('div');
 priceCont.className = 'product__price';
 
@@ -21,7 +19,6 @@ currentPrice.className = 'price__curent';
 discountCont.append(basePrice, discount);
 priceCont.append(currentPrice, discountCont);
 
-// image
 const imgSlider = document.createElement('div');
 imgSlider.className = 'product__image';
 
@@ -37,7 +34,6 @@ sliderControls.className = 'image__controls';
 
 imgSlider.append(imgCont, sliderControls);
 
-// variants
 const variants = document.createElement('div');
 variants.className = 'product__variants';
 variants.textContent = 'Variants:';
@@ -47,24 +43,15 @@ variantsBlock.className = 'variants__variants-block';
 
 variants.append(variantsBlock);
 
-// basket button
-
 const buttonBlock = document.createElement('div');
 buttonBlock.classList.add('product__buttons');
 
 const addBasketButton = document.createElement('button');
+buttonBlock.append(addBasketButton);
 
-// const removeBasketButton = document.createElement('button');
-// removeBasketButton.classList.add('buttons__remove-button');
-// removeBasketButton.textContent = 'console carts';
-
-buttonBlock.append(addBasketButton /* removeBasketButton */);
-
-// description
 const description = document.createElement('div');
 description.className = 'product__description-block';
 
-// features
 const features = document.createElement('div');
 features.className = 'product__features';
 

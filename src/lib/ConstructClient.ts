@@ -4,15 +4,11 @@ import {
   type PasswordAuthMiddlewareOptions,
 } from '@commercetools/sdk-client-v2';
 
-// import clientObj from ...;
-
-// example
 const obj = {
   username: 'testView@test.test',
   password: 'testView111',
 };
 
-// Configure const passwordAuthMiddlewareOptions
 export const passOptions = (
   username: string,
   password: string,
@@ -44,7 +40,6 @@ export const passOptions = (
   fetch,
 });
 
-// Export verified ClientBuilder - not used
 export const vrfClient = new ClientBuilder()
   .withPasswordFlow(passOptions(obj.username, obj.password))
   .build();

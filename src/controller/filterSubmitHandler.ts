@@ -2,7 +2,6 @@ import { Cart, Category, ProductDraft } from '@commercetools/platform-sdk';
 import { filterByParams, getCategoryByKey } from '../model/api/apiRoot';
 import cardsBlock, { createCard } from '../view/pages/catalog/cards';
 import filters from '../view/pages/catalog/filters';
-// import { fillProductPage } from './fillProductPage';
 import { searchFilterBlock } from '../view/pages/catalog/items';
 import { getLimit, getOffset, updatePaginator } from './paginatorHandlers';
 import { tuneWithCart } from './catalogBasketHandlers';
@@ -77,8 +76,6 @@ const getFilterData = () => {
     }
   });
 
-  // getCategory();
-
   return filterOptions;
 };
 
@@ -130,9 +127,6 @@ export const placeCards = (cards: ProductDraft[]) => {
       getAttribute('power'),
       getAttribute('weight'),
     );
-    // const description = card.description
-    //   ? `${card.description.en.slice(0, 51)}...`
-    //   : '{{year}}, {{type}}, {{cc}}, {{power}}, {{weight}}';
     let img = '';
     let price = '000';
     const centPerEuro = 100;
@@ -153,10 +147,6 @@ export const placeCards = (cards: ProductDraft[]) => {
         }`;
         const basePrice =
           (card.masterVariant.prices[0].value.centAmount || 1) / centPerEuro;
-
-        // const discountedPrice =
-        // card.masterVariant.prices[0].discounted.value.centAmount /
-        // centPerEuro;
 
         createdCard = createCard(
           sku,

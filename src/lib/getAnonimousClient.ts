@@ -1,14 +1,10 @@
 import {
   AnonymousAuthMiddlewareOptions,
   ClientBuilder,
-  // ExistingTokenMiddlewareOptions,
   HttpMiddlewareOptions,
   TokenStore,
 } from '@commercetools/sdk-client-v2';
 
-// import clientObj from ...;
-
-// Configure const passwordAuthMiddlewareOptions
 const anonimousOptions: AnonymousAuthMiddlewareOptions = {
   host: 'https://auth.europe-west1.gcp.commercetools.com',
   projectKey: 'ddt-e-commerce-rss-app',
@@ -36,26 +32,8 @@ const httpMiddlewareOptions: HttpMiddlewareOptions = {
   fetch,
 };
 
-// Export anon ClientBuilder
 export const anonCartClient = new ClientBuilder()
   .withAnonymousSessionFlow(anonimousOptions)
   .withHttpMiddleware(httpMiddlewareOptions)
   .withLoggerMiddleware()
   .build();
-
-// Export auth ClientBuilder
-// const authParams: TokenStore = JSON.parse(
-//   localStorage.getItem('cartLocalToken') as string,
-// );
-
-// const bearer = `Bearer ${authParams.token}`;
-
-// const options: ExistingTokenMiddlewareOptions = {
-//   force: true,
-// };
-
-// export const authCartClient = new ClientBuilder()
-//   .withExistingTokenFlow(bearer, options)
-//   .withHttpMiddleware(httpMiddlewareOptions)
-//   .withLoggerMiddleware()
-//   .build();

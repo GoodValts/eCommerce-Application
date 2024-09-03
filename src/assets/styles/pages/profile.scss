@@ -1,10 +1,6 @@
 @import '../general.scss';
 @import '../elements/form.scss';
 
-.profile-page {
-  // width: 100%;  
-}
-
 .profile-page__header {
   @include _mainFont(35px);
   margin: calc($marginDesctop / 2) 0;
@@ -349,7 +345,6 @@
   }
 }
 
-// MENU ===============
 .profile-page__menu {
   display: flex;
   flex-wrap: wrap;

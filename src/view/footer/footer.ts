@@ -4,8 +4,6 @@ footer.classList.add('footer');
 const footerContainer = document.createElement('div');
 footerContainer.classList.add('footer__container');
 
-// create teamBlock
-
 const teamBlock = document.createElement('div');
 teamBlock.classList.add('footer__team');
 
@@ -16,8 +14,6 @@ teamLink.href =
   'https://github.com/Greys73/eCommerce-Application/blob/develop/README.md#team';
 
 teamBlock.append(teamLink);
-
-// create rssBlock
 
 const rssBlock = document.createElement('div');
 rssBlock.classList.add('footer__rss');
@@ -33,8 +29,6 @@ rssLogo.src =
 
 rssLink.append(rssLogo);
 rssBlock.append(rssLink);
-
-// create yearBlock
 
 const yearBlock = document.createElement('div');
 yearBlock.classList.add('footer__year');

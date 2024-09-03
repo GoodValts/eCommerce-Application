@@ -8,10 +8,7 @@ import {
 import { ctpClient } from '../../lib/BuildClient';
 import { vrfClient } from '../../lib/ConstructClient';
 
-//        !!! Current version (need local storage getters/setters)
-const customerId = undefined; // get LocalStorage func;
-
-// Create apiRoot from the imported ClientBuilder and include your Project key
+const customerId = undefined;
 const client = customerId ? vrfClient : ctpClient;
 const apiRoot = createApiBuilderFromCtpClient(client).withProjectKey({
   projectKey: 'ddt-e-commerce-rss-app',
@@ -195,19 +192,6 @@ export const filterByParams = (
     .execute()
     .then((obj) => obj)
     .catch((err) => err);
-
-// export const getAllProducts = () =>
-//   apiRoot
-//     .productProjections()
-//     .search()
-//     .get({
-//       queryArgs: {
-//         limit: 100,
-//       },
-//     })
-//     .execute()
-//     .then((obj) => obj)
-//     .catch((err) => err);
 
 export const getCategories = () =>
   apiRoot

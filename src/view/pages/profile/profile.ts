@@ -12,7 +12,6 @@ const header = document.createElement('h1');
 header.classList.add('profile-page__header');
 header.textContent = 'Profile';
 
-// User data
 export const userDataSection = document.createElement('div');
 userDataSection.classList.add('profile-page__user-data');
 export function createUserDataForm(): HTMLFormElement {
@@ -93,7 +92,6 @@ export function createUserDataForm(): HTMLFormElement {
   return form;
 }
 
-// Change password
 export const changePasswordButton = document.createElement('button');
 changePasswordButton.classList.add('user-data__password-button');
 changePasswordButton.textContent = 'Change Password';
@@ -195,7 +193,6 @@ changePasswordButton.addEventListener('click', () => {
   changePasswordButton.classList.add('hidden');
 });
 
-// Adress section
 export const addressSection = document.createElement('div');
 addressSection.classList.add('profile-page__address');
 
