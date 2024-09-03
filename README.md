@@ -1,14 +1,14 @@
 # eCommerce-Application from Dev Dream Team
 
+#### [Deploy link](https://motodream-shop.netlify.app).
+
 ## Contents
 * [Description](#description)
 * [Purpose](#purpose)
 * [Technologies](#technologies)
-* [Install](#install) (deploy)
+* [Install](#install)
 * [Scripts](#available-scripts)
 * [Team](#team)
-
-
 
 ## Description
 Welcome to our **eCommerce Application**! This application is the final [task](https://github.com/rolling-scopes-school/tasks/tree/master/tasks/eCommerce-Application) of the [RSSchool JavaScript/Front-end 2023Q1 course](https://rs.school/js/), developed by the [Dev Dream Team](#team).
@@ -59,8 +59,6 @@ To start the application, please make sure you have [Git](https://git-scm.com) a
 1. Switch to 'develop' branch: `git checkout develop`
 1. Install dependencies: `npm install`
 1. Start the development server: `npm start`
-
-#### [Deploy link](https://motodream-shop.netlify.app).
 
 ## Available Scripts
 In the project directory, you can run scripts:
