@@ -11,7 +11,7 @@ const teamLink = document.createElement('a');
 teamLink.classList.add('footer__team-link');
 teamLink.innerHTML = 'Designed by <b>Dev Dream Team</b>';
 teamLink.href =
-  'https://github.com/Greys73/eCommerce-Application/blob/develop/README.md#team';
+  'https://github.com/GoodValts/ecommerce-application/blob/develop/README.md#team';
 
 teamBlock.append(teamLink);
 
