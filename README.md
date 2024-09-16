@@ -1,7 +1,5 @@
 # eCommerce-Application from Dev Dream Team
 
-#### [Deploy link](https://motodream-shop.netlify.app).
-
 ## Contents
 * [Description](#description)
 * [Purpose](#purpose)
@@ -52,6 +50,8 @@ Technology stack:
 ---	
 
 ## Install
+
+[Deploy link](https://motodream-shop.netlify.app).
 
 To start the application, please make sure you have [Git](https://git-scm.com) and [Node.js](https://nodejs.org) installed on your machine. Then, follow these steps: 
 1. Clone repository: `git clone https://github.com/Greys73/eCommerce-Application.git`
