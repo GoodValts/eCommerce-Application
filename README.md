@@ -51,14 +51,14 @@ Technology stack:
 
 ## Install
 
-[Deploy link](https://motodream-shop.netlify.app).
-
 To start the application, please make sure you have [Git](https://git-scm.com) and [Node.js](https://nodejs.org) installed on your machine. Then, follow these steps: 
 1. Clone repository: `git clone https://github.com/Greys73/eCommerce-Application.git`
 1. Navigate to the project directory: `cd eCommerce-Application`
 1. Switch to 'develop' branch: `git checkout develop`
 1. Install dependencies: `npm install`
 1. Start the development server: `npm start`
+
+[Deploy link](https://motodream-shop.netlify.app).
 
 ## Available Scripts
 In the project directory, you can run scripts:
