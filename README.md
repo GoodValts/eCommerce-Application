@@ -79,8 +79,8 @@ In the project directory, you can run scripts:
 The Application was created by `Dev Dream Team` — the best RSS team ever.
 
 Our members:
-* **Vladimir Myazin** ([Greys73](https://github.com/Greys73))
 * **Ivan Martynjuk** ([GoodValts](https://github.com/GoodValts))
+* **Vladimir Myazin** ([Greys73](https://github.com/Greys73))
 * **Katsiaryna Talkachova** ([katrin-brest](https://github.com/katrin-brest))
 
 We can do everything and just a little more to exceed your expectations.
